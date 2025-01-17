@@ -33,7 +33,7 @@ def main(pagina):
         pagina.update()
         print("Clique no botão")
   
-    botao = ft.ElevatedButton("Iniciar Chat", on_click=abrir_popup)
+    botao = ft.ElevatedButton("Iniciar Chat", on_click = abrir_popup)
 
     pagina.add(titulo)
     pagina.add(botao)
