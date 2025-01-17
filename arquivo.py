@@ -24,14 +24,19 @@ def main(pagina):
 
     titulo_popup = ft.Text("Bem Vindo ao SpeaChat")
     caixa_nome = ft.TextField(label="Digite seu nome")
+
+    campo_enviar_mensagem = ft.TextField(label="Digite aqui a sua mensagem")
+    botao_enviar = ft.ElevatedButton("Enviar")
+
     def entrar_chat(evento):
         popup.open=False
         pagina.remove(titulo)
         pagina.remove(botao)
-                
-                    # Carregar o chat
-                    # Carregar o campo de enviar mensagem: Digite sua mensagem
-                    # Botão Enviar 
+        pagina.add(campo_enviar_mensagem)    
+        pagina.add(botao_enviar)    
+
+        pagina.update()
+
     botao_popup = ft.ElevatedButton("Entrar no chat", on_click=entrar_chat)
 
     popup = ft.AlertDialog(title = titulo_popup, content = caixa_nome, actions = [botao_popup])
