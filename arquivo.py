@@ -29,4 +29,4 @@ def main(pagina):
     pagina.add(botao)
     
 # executar essa função com o flet
-ft.app(main)
+ft.app(main, view=ft.WEB_BROWSER)
