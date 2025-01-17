@@ -18,15 +18,20 @@
 
 import flet as ft
 
-# criar uma função principal para rodar seu app
 def main(pagina):
-    # título
     titulo = ft.Text("SpeaChat")
-    pagina.add(titulo)
 
-    # botão inicial
-    botao = ft.ElevatedButton("Iniciar Chat",)
+    titulo_popup = ft.Text("Bem Vindo ao SpeaChat")
+    caixa_nome = ft.TextField("Escreva seu nome no chat")
+    botao_popup = ft.ElevatedButton("Entrar no chat")
+    popup = ft.AlertDialog(title = titulo_popup, content = caixa_nome, actions = [botao_popup])
+
+    def abrir_popup(evento):
+        print("Clique no botão")
+  
+    botao = ft.ElevatedButton("Iniciar Chat", on_click=abrir_popup)
+
+    pagina.add(titulo)
     pagina.add(botao)
-    
-# executar essa função com o flet
+
 ft.app(main, view=ft.WEB_BROWSER)
