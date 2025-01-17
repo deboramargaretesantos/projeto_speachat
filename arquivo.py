@@ -22,17 +22,14 @@ import flet as ft
 def main(pagina):
     titulo = ft.Text("SpeaChat")
 
-    titulo_popup = ft.Text("Bem Vindo ao SpeaChat")
-    caixa_nome = ft.TextField(label="Digite seu nome")
-
     def enviar_mensagem(evento):
         texto = ft.Text(campo_enviar_mensagem.value)
         chat.controls.append(texto)
         pagina.update()
 
     campo_enviar_mensagem = ft.TextField(label="Digite aqui a sua mensagem")
-    botao_enviar = ft.ElevatedButton("Enviar", on_click=campo_enviar_mensagem )
-    linha_enviar = ft.Row([campo_enviar_mensagem, botao_enviar])    
+    botao_enviar = ft.ElevatedButton("Enviar", on_click=enviar_mensagem)
+    linha_enviar = ft.Row([campo_enviar_mensagem, botao_enviar])  
 
     chat = ft.Column()
 
@@ -41,10 +38,13 @@ def main(pagina):
         pagina.remove(titulo)
         pagina.remove(botao)
         pagina.add(chat)
+
         pagina.add(linha_enviar)       
 
         pagina.update()
 
+    titulo_popup = ft.Text("Bem Vindo ao SpeaChat")
+    caixa_nome = ft.TextField(label="Digite seu nome")
     botao_popup = ft.ElevatedButton("Entrar no chat", on_click=entrar_chat)
 
     popup = ft.AlertDialog(title = titulo_popup, content = caixa_nome, actions = [botao_popup])
