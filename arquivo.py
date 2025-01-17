@@ -22,7 +22,7 @@ def main(pagina):
     titulo = ft.Text("SpeaChat")
 
     titulo_popup = ft.Text("Bem Vindo ao SpeaChat")
-    caixa_nome = ft.TextField("Escreva seu nome no chat")
+    caixa_nome = ft.TextField(label="Digite seu nome")
     botao_popup = ft.ElevatedButton("Entrar no chat")
 
     popup = ft.AlertDialog(title = titulo_popup, content = caixa_nome, actions = [botao_popup])
