@@ -29,10 +29,13 @@ def main(pagina):
     botao_enviar = ft.ElevatedButton("Enviar")
     linha_enviar = ft.Row([campo_enviar_mensagem, botao_enviar])    
 
+    chat = ft.Column()
+    
     def entrar_chat(evento):
         popup.open=False
         pagina.remove(titulo)
         pagina.remove(botao)
+        pagina.add(chat)
         pagina.add(linha_enviar)       
 
         pagina.update()
