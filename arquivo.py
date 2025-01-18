@@ -23,7 +23,9 @@ def main(pagina):
     titulo = ft.Text("SpeaChat")
 
     def enviar_mensagem(evento):
-        texto = ft.Text(campo_enviar_mensagem.value)
+        nome_usuario = caixa_nome.value
+        texto_campo_mensagem = campo_enviar_mensagem.value
+        texto = ft.Text(f"{nome_usuario}: {texto_campo_mensagem}")
         chat.controls.append(texto)
         pagina.update()
     
