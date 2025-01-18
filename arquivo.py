@@ -33,7 +33,7 @@ def main(pagina):
         nome_usuario = caixa_nome.value
         texto_campo_mensagem = campo_enviar_mensagem.value
         mensagem = (f"{nome_usuario}: {texto_campo_mensagem}")
-        pagina.pubsub.sendall()
+        pagina.pubsub.send_all(mensagem)
         campo_enviar_mensagem.value = ""
         pagina.update()
     
