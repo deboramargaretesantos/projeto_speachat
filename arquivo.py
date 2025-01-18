@@ -42,8 +42,10 @@ def main(pagina):
         pagina.remove(botao)
         pagina.add(chat)
 
-        pagina.add(linha_enviar)       
-
+        pagina.add(linha_enviar) 
+        nome_usuario = caixa_nome.value      
+        texto_mensagem = ft.Text(f"{nome_usuario} entrou no chat")
+        chat.controls.append(texto_mensagem)
         pagina.update()
 
     titulo_popup = ft.Text("Bem Vindo ao SpeaChat")
