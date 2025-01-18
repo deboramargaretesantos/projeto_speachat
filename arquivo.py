@@ -22,11 +22,18 @@ import flet as ft
 def main(pagina):
     titulo = ft.Text("SpeaChat")
 
+    def enviar_mensagem_tunel(mensagem): 
+        texto = ft.Text (mensagem)
+        chat.controls.append(texto)
+        pagina.update()
+
+    pagina.pubsub.subscribe(enviar_mensagem_tunel)
+
     def enviar_mensagem(evento):
         nome_usuario = caixa_nome.value
         texto_campo_mensagem = campo_enviar_mensagem.value
-        texto = ft.Text(f"{nome_usuario}: {texto_campo_mensagem}")
-        chat.controls.append(texto)
+        mensagem = (f"{nome_usuario}: {texto_campo_mensagem}")
+        pagina.pubsub.sendall()
         campo_enviar_mensagem.value = ""
         pagina.update()
     
