@@ -27,6 +27,7 @@ def main(pagina):
         texto_campo_mensagem = campo_enviar_mensagem.value
         texto = ft.Text(f"{nome_usuario}: {texto_campo_mensagem}")
         chat.controls.append(texto)
+        campo_enviar_mensagem.value = ""
         pagina.update()
     
     campo_enviar_mensagem = ft.TextField(label="Digite aqui a sua mensagem", on_submit=enviar_mensagem)
