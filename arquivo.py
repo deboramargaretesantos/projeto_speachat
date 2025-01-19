@@ -37,7 +37,7 @@ def main(pagina):
         campo_enviar_mensagem.value = ""
         pagina.update()
     
-    campo_enviar_mensagem = ft.TextField(label = "Digite aqui a sua mensagem", on_submit=enviar_mensagem)
+    campo_enviar_mensagem = ft.TextField(label="Digite aqui a sua mensagem", on_submit=enviar_mensagem)
     botao_enviar = ft.ElevatedButton("Enviar", on_click=enviar_mensagem)
     linha_enviar = ft.Row([campo_enviar_mensagem, botao_enviar])  
 
@@ -51,7 +51,7 @@ def main(pagina):
 
         pagina.add(linha_enviar) 
         nome_usuario = caixa_nome.value      
-        texto_mensagem = ft.Text(f"{nome_usuario} entrou no chat")
+        texto_mensagem = ft.Text(f"{nome_usuario} entrou no chat",  size=12, italic=True, color=ft.colors.ORANGE_500)
         chat.controls.append(texto_mensagem)
         pagina.update()
 
